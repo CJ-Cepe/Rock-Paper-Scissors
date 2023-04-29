@@ -27,31 +27,58 @@ const playRound = (playerSelection, computerSelection) => {
     console.log(VALUES[playerSelection] + " vs " + VALUES[computerSelection])
     //compare players choice
     if(playerSelection === computerSelection){
-        return "It's a tie";
+        console.log("It's a tie");
+        return 0; 
     } else if (playerSelection === VALUES.length-1 && computerSelection === 0) {
-        return "Computer wins";
+        console.log("Computer wins") 
+        return 2;
     } else if (playerSelection === 0 && computerSelection === VALUES.length-1) {
-        return "Player wins";
+        console.log("Player wins")
+        return 1;
     } else if (playerSelection < computerSelection) {
-        return "Computer wins";
+        console.log("Computer wins")
+        return 2;
     } else {
-        return "Player wins";
+        console.log("Player wins")
+        return 1;
+    }
+}
+
+const printFinalResult = (playerScore, computerScore) => {
+    console.log(`==== FINAL SCORE ===== 
+    Player = ${playerScore}
+    Computer = ${computerScore}
+`)
+    if(playerScore > computerScore){
+        console.log("Player WINS!!!")
+    } else if (playerScore < computerScore){
+        console.log("Computer WINS!!!")
+    } else {
+        console.log("It's a TIE!!!")
     }
 }
 
 const game = function () {
-    //ask player num
-    let ans = prompt("Pick between Rock, Paper, and Scissors");
-    //lowercase prompt and check if in array
-    console.log(ans.toLowerCase())
-    let playerAns = VALUES.indexOf(ans.toLowerCase());
-    console.log(playerAns);
-    let computerAns = getComputerChoice();
-    let result = playRound(playerAns, computerAns);
-    console.log(result)
+    let p1Score = 0;
+    let c1Score = 0;
+
+    for(i = 0; i < 5 ; i++){
+        //ask player num
+        let ans = prompt("Pick between Rock, Paper, and Scissors");
+        //lowercase prompt and check if in array
+        let playerAns = VALUES.indexOf(ans.toLowerCase());
+        let computerAns = getComputerChoice();
+        let result = playRound(playerAns, computerAns);
+        if(result == 1) {
+            p1Score++;
+        } else if (result == 2) {
+            c1Score++;
+        }
+    }
+
+    printFinalResult(p1Score, c1Score)
 }
 
-for(i = 0; i < 5 ; i++){
-    game();
-}
+game();
+
 
