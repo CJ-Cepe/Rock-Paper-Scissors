@@ -25,5 +25,16 @@ console.log(getComputerChoice());
 //return who's the winner
 const playRound = (playerSelection, computerSelection) => {
     //compare players choice
-    
+    if(playerSelection === computerSelection){
+        return "It's a tie";
+    } else if (playerSelection === VALUES.length-1 && computerSelection === 0) {
+        return "Computer wins"
+    } else if (playerSelection === 0 && computerSelection === VALUES.length-1) {
+        return "Player wins"
+    } else if (playerSelection < computerSelection) {
+        return "Computer wins"
+    } else {
+        return "Player wins"
+    }
 }
+
