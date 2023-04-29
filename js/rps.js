@@ -1,5 +1,5 @@
 
-
+//Possible values
 const VALUES = ['rock', 'paper', 'scissor'];
 
 /* will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
@@ -25,7 +25,13 @@ function getComputerChoice (){
 //return who's the winner
 const playRound = (playerSelection, computerSelection) => {
     console.log(VALUES[playerSelection] + " vs " + VALUES[computerSelection])
-    //compare players choice
+    
+    // if else to compare players choice
+    // check if tie
+    // check if player picks scissor while comp picks rock
+    // check if player picks rock while comp picks scissor
+    // check which player picks greater since the values is in array
+    // return otherwise
     if(playerSelection === computerSelection){
         console.log("It's a tie");
         return 0; 
@@ -44,6 +50,7 @@ const playRound = (playerSelection, computerSelection) => {
     }
 }
 
+// function to print final results
 const printFinalResult = (playerScore, computerScore) => {
     console.log(`==== FINAL SCORE ===== 
     Player = ${playerScore}
@@ -58,17 +65,23 @@ const printFinalResult = (playerScore, computerScore) => {
     }
 }
 
+//function to play the game
 const game = function () {
+
+    //hold score values
     let p1Score = 0;
     let c1Score = 0;
 
     for(i = 0; i < 5 ; i++){
         //ask player num
         let ans = prompt("Pick between Rock, Paper, and Scissors");
-        //lowercase prompt and check if in array
+        //lowercase prompt and check index in the array
         let playerAns = VALUES.indexOf(ans.toLowerCase());
+        //get computer answer
         let computerAns = getComputerChoice();
+        //compare answers - pass player and computer ans
         let result = playRound(playerAns, computerAns);
+        //update result
         if(result == 1) {
             p1Score++;
         } else if (result == 2) {
@@ -76,9 +89,11 @@ const game = function () {
         }
     }
 
+    //print final results
     printFinalResult(p1Score, c1Score)
 }
 
+//initialize the game
 game();
 
 
