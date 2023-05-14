@@ -94,6 +94,6 @@ const game = function () {
 }
 
 //initialize the game
-game();
+//game();
 
 

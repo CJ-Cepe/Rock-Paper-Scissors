@@ -1,0 +1,62 @@
+* {
+    outline: red solid 1px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    height: 5%;
+    background-color: beige;
+}
+
+main {
+    height: 90%;
+    display: flexbox;
+    flex-direction: column;
+}
+
+footer {
+    height: 5%;
+    background-color: bisque;
+}
+
+.cont1{
+    height: 10%;
+    background-color: navy;
+}
+
+.cont2{
+    height: 60%;
+    display: flex;
+}
+
+.cont3{
+    height: 30%;
+    display: flex;
+}
+
+.left-cont, .right-cont {
+    display: flex;
+    width: 50%;
+}
+
+.left-cont {
+    background-color: cadetblue;
+}
+
+.right-cont {
+    background-color: aquamarine;
+}
+
+.side-cont {
+    flex-grow: 1;
+}
+
+.mid-cont {
+    flex-grow: 2;
+}
