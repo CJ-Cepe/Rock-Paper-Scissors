@@ -1,6 +1,3 @@
-
-
-
     //handle round
     let roundElement = document.querySelector('.round-number');
     let round = 1;
@@ -11,6 +8,8 @@
     let cpuScoreElement = document.querySelector('.cpu-score');
     let cpuScore = 0;
 
+    const modal = document.querySelector(".modal");
+    const overlay = document.querySelector(".overlay");
 
 //pick pokeball compare to cpu choice
     let pokeballOne = document.querySelector('.fire');
@@ -73,7 +72,7 @@ function getComputerChoice(){
     }
 }
 
-function updateResult(roundResult) {
+function updateResult(roundResult){
     switch(roundResult){
         case 0:
             break;
@@ -87,6 +86,10 @@ function updateResult(roundResult) {
     round++;
     console.log(roundResult)
     console.log(`${round} ${playerScore} ${cpuScore} `)
+
+    //check if there is a winner
+    checkWinner()
+    //reset
     updateScoreDisplay()
 }
 
@@ -94,4 +97,40 @@ function updateScoreDisplay() {
     cpuScoreElement.textContent = `${cpuScore}`
     playerScoreElement.textContent = `${playerScore}`
     roundElement.textContent = `${round}`
+}
+
+function checkWinner() {
+    if(playerScore === 6 || cpuScore === 6) {
+        playerScore === 6 ? declareWinner(true) : declareWinner (false)
+        //reset()
+    }
+}
+
+function declareWinner(status) {
+    console.log('===FINAL RESULTs===')
+    if(status){
+        console.log('Player Wins')
+        displayWinner()
+    } else {
+        console.log('Computer Wins')
+        displayWinner()
+    }
+}
+
+function reset(){
+    round = 1;
+    playerScore = 0;
+    cpuScore = 0;
+
+    cpuScoreElement.textContent = `${cpuScore}`
+    playerScoreElement.textContent = `${playerScore}`
+    roundElement.textContent = `${round}`
+
+    modal.classList.add('hidden')
+    overlay.classList.add('hidden')
+}
+
+function displayWinner(){
+    modal.classList.remove('hidden')
+    overlay.classList.remove('hidden')
 }
