@@ -5,6 +5,7 @@
     margin: 0;
 }
 
+/* -- Main containers --*/
 body {
     height: 100vh;
 }
@@ -25,16 +26,23 @@ footer {
     background-color: bisque;
 }
 
+/* -- body container 1 --*/
 .cont1{
     height: 10%;
-    background-color: navy;
+    background-color: rgb(101, 213, 228);
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* -- body container 2 --*/
 .cont2{
     height: 60%;
     display: flex;
 }
 
+/* -- body container 3 --*/
 .cont3{
     height: 30%;
     display: flex;
@@ -53,10 +61,47 @@ footer {
     background-color: aquamarine;
 }
 
+/* -- middle container -- */
 .side-cont {
     flex-grow: 1;
 }
 
 .mid-cont {
     flex-grow: 2;
+}
+
+/* -- lower container --*/
+.lower-right-cont {
+    justify-content: center;
+    align-items: center;
+}
+
+.ScoreBoard-cont{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 80%;
+}
+
+.sb-row1, .sb-row2, .sb-row3, .score, .divider, .sb-sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sb-row1{
+    flex-grow: 2;
+}
+.sb-row2{
+    flex-grow: 1;
+    align-items: stretch;
+}
+.sb-row3{
+    flex-grow: 3;
+    align-items: stretch;
+}
+.score{
+    flex-grow: 3;
+}
+.divider{
+    flex-grow: 1;
 }
