@@ -38,7 +38,7 @@ let round = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
-
+let githubAddress = 'https://github.com/CJ-Cepe/Rock-Paper-Scissors/tree/main/assets/audio/'
 
 elements.pokeballOne.addEventListener('click', () => {
     resetPokemonColor()
@@ -82,22 +82,22 @@ playGame()
 function playAudio(whatAudio){
     switch (whatAudio) {
         case 1:
-            elements.audioElem.src = '../assets/audio/battle.mp3'
+            elements.audioElem.src = githubAddress + 'battle.mp3'
             elements.audioElem.play()
             break;
         case 2:
-            elements.audioElem.src = '../assets/audio/victory.mp3'
+            elements.audioElem.src = githubAddress + 'victory.mp3'
             elements.audioElem.play()
             break;
         case 3:
-            elements.audioElem.src = '../assets/audio/loss.mp3'
+            elements.audioElem.src = githubAddress + 'loss.mp3'
             elements.audioElem.play()
         case 4:
-            elements.audio2Elem.src = '../assets/audio/damage.mp3'
+            elements.audio2Elem.src = githubAddress + 'damage.mp3'
             elements.audio2Elem.play()
             break;
         case 5:
-            elements.audio2Elem.src = '../assets/audio/absorb.mp3'
+            elements.audio2Elem.src = githubAddress + 'absorb.mp3'
             elements.audio2Elem.play()
             break;
         case 6:
