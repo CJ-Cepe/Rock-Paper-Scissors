@@ -38,8 +38,8 @@ let round = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
-let githubAddress = 'https://github.com/CJ-Cepe/Rock-Paper-Scissors/tree/main/assets/audio/'
-let githubAddressEnd = '?raw=true'
+let githubAddress = 'https://github.com/CJ-Cepe/Rock-Paper-Scissors/raw/main/assets/audio/'
+let githubAddressEnd = '' //?raw=true
 
 elements.pokeballOne.addEventListener('click', () => {
     resetPokemonColor()
