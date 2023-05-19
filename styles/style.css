@@ -1,8 +1,14 @@
+@font-face {
+    font-family: pkmn-font;
+    src: url(../assets/font/PKMN\ RBYGSC.ttf);
+}
+
 * {
-    outline: red solid 1px;
+    /*outline: red solid 1px;*/
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: pkmn-font;
 }
 
 /* -- Main containers --*/
@@ -12,7 +18,12 @@ body {
 
 header {
     height: 5%;
-    background-color: beige;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 30px;
 }
 
 main {
@@ -23,23 +34,38 @@ main {
 
 footer {
     height: 5%;
-    background-color: bisque;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* -- body container 1 --*/
 .cont1{
     height: 10%;
-    background-color: rgb(101, 213, 228);
     display: flex;  
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.cont1 .round-result{
+    font-style: italic;
+    letter-spacing: 3px;
+    font-size: 1rem;
 }
 
 /* -- body container 2 --*/
 .cont2{
     height: 60%;
     display: flex;
+    /*background-image: url(../assets/others/arena.webp);
+    background-size: cover;
+    background-position: 40% 82%;*/
 }
 
 /* -- body container 3 --*/
@@ -54,14 +80,20 @@ footer {
 }
 
 .left-cont {
-    background-color: cadetblue;
+    /*background-color: cadetblue;*/
 }
 
 .right-cont {
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
 }
 
 /* -- middle container -- */
+.side-cont, .mid-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .side-cont {
     flex-grow: 1;
 }
@@ -70,7 +102,76 @@ footer {
     flex-grow: 2;
 }
 
+.trainer {
+    height: 40%;
+    width: auto;
+}
+
+.trainer.left {
+}
+
+.pokemon {
+    height: 50%;
+    width: auto;
+}
+
+.left {
+    transform: rotateY(180deg);
+}
 /* -- lower container --*/
+.lower-left-cont {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.pokeball-container {
+    text-align: center;
+}
+
+.type {
+    padding: 4% 0;
+    font-size: 1rem;
+    border: 2px solid;
+    border-radius: 5rem;
+    font-family: arial;
+    color: white;
+    width: 60%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fire {
+    background-color: #F08030;
+    border-color: #9C531F;
+}
+
+.fire:hover {
+    background-color: #9C531F;
+    border-color: #F08030;
+}
+
+.water{
+    background-color: #6890F0;
+    border-color: #445E9C;
+}
+
+.water:hover{
+    background-color: #445E9C;
+    border-color: #6890F0;
+}
+
+.grass{
+    background-color: #78C850;
+    border-color: #4E8234;
+}
+
+.grass:hover{
+    background-color: #4E8234;
+    border-color: #78C850;
+}
+
 .lower-right-cont {
     justify-content: center;
     align-items: center;
@@ -79,6 +180,7 @@ footer {
 .ScoreBoard-cont{
     display: flex;
     flex-direction: column;
+    border: 0.5rem double black;
     width: 50%;
     height: 80%;
 }
@@ -90,14 +192,18 @@ footer {
 }
 .sb-row1{
     flex-grow: 2;
+    font-size: 2rem;
+    border-bottom: 2px solid black;
 }
 .sb-row2{
     flex-grow: 1;
     align-items: stretch;
+    font-size: 1.5rem;
 }
 .sb-row3{
     flex-grow: 3;
     align-items: stretch;
+    font-size: 2rem;
 }
 .score{
     flex-grow: 3;
@@ -106,15 +212,45 @@ footer {
     flex-grow: 1;
 }
 
-
-.modal{
-    top: 20%;
-    gap: 0.4rem;
+/* -- Modal -- */
+.modal, .intro-modal{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     height: 200px;
     width: 500px;
     position: absolute;
     background-color: white;
     z-index: 2;
+
+    border: solid 0.5rem black;
+    padding: 1%;
+}
+
+.intro-modal{
+    height: 300px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.play-button {
+    font-size: 1rem;
+    padding: 5% 10%;
+    border-radius: 5%;
+    border: 5px solid black;
+}
+
+.play-button:hover {
+    background-color: rgb(78, 77, 77);
+    color: white;
 }
 
 .overlay{
@@ -125,11 +261,72 @@ footer {
     bottom: 0;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(50px);
     z-index: 1;
 }
 
 .hidden {
     display: none;
 }
+
+.modal-top{
+    display: flex;
+    height: 70%;
+}
+
+.modal-left {
+    flex-grow: 3;
+    flex-direction: column;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.modal-left .modal-text {
+    font-size: 2rem;
+    padding-bottom: 2%;
+   /* white-space: pre; */
+}
+
+.modal-right {
+    flex-grow: 2;
+}
+
+.modal-bottom {
+    height: 30%;
+}
+
+.modal-top, .modal-bottom, .modal-left, .modal-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-button {
+    margin-top: 5%  ;
+    padding: 2% 2%;
+    background-color: white;
+    border: solid black 2px;
+}
+
+.reset-button:hover {
+    color: white;
+    background-color: gray;
+}
+
+
+.blink {
+    animation: blink-animation 0.1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 0.1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }

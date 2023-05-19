@@ -6,77 +6,101 @@
 
         <title>R-P-S</title>
         <link href="styles/style.css" type="text/css" rel="stylesheet"/>
+        <link href="styles/pokeball-roll.css" type="text/css" rel="stylesheet"/>
         <script src="js/rps.js" type="text/javascript" defer></script>
     </head>
     <body>
-        <header></header>
+        <header>
+            <p>POKEMON RPS</p>
+        </header>
         <main>
-            <div class="cont1">
-                <p>Round</p>
-                <p class="round-number">1</p>
-            </div>
+            <audio class='audio1' src=""></audio>
+            <audio class='audio2' src=""></audio>
 
-            <div class="cont2">
-                <div class="left-cont">
-                    <div class="side-cont">
-                        <img src="./assets/trainer-placeholder.png" class="trainer" width="200px" height="auto">
-                    </div>
-                    <div class="mid-cont">
-                        <img src="./assets/monster-placeholder.png" class="pokemon" width="200px" height="auto">
-                    </div>
+                <div class="cont1">
+                    <p class="round-number"></p>
+                    <p class="round-result"></p>
                 </div>
-
-                <div class="right-cont">
-                    <div class="mid-cont">
-                        <img src="./assets/monster-placeholder.png" class="pokemon" width="200px" height="auto">
-                    </div>
-                    <div class="side-cont">
-                        <img src="./assets/trainer-placeholder.png" class="trainer" width="200px" height="auto">
-                    </div>
-                </div>
-            </div>
-
-            <div class="cont3">
-                <div class="left-cont">
-                    <img class="pokeball fire" src="./assets/pokeball-placeholder.jpg" alt="" width ="200px" height="200px">
-                    <img class="pokeball water" src="./assets/pokeball-placeholder.jpg" alt="" width ="200px" height="200px">
-                    <img class="pokeball grass" src="./assets/pokeball-placeholder.jpg" alt="" width ="200px" height="200px">
-                </div>
-                <div class="right-cont lower-right-cont">
-                    <div class="ScoreBoard-cont">
-                        <div class="sb-row1">Score Board</div>
-                        <div class="sb-row2">
-                            <div class="left-cont sb-sign">Player</div>
-                            <div class="right-cont sb-sign">CPU</div>
+    
+                <div class="cont2">
+                    <div class="left-cont">
+                        <div class="side-cont">
+                            <img src="./assets/trainer-placeholder.png" class="trainer left left-trainer" width="200px" height="auto">
                         </div>
-                        <div class="sb-row3">
-                            <div class="score player-score">0</div>
-                            <div class="divider">:</div>
-                            <div class="score cpu-score">0</div>
+                        <div class="mid-cont">
+                            <img class="pokemon left left-pokemon" width="200px" height="auto">
+                        </div>
+                    </div>
+    
+                    <div class="right-cont">
+                        <div class="mid-cont">
+                            <img class="pokemon right-pokemon" width="200px" height="auto">
+                        </div>
+                        <div class="side-cont">
+                            <img src="./assets/trainer-placeholder.png" class="trainer right-trainer" width="200px" height="auto">
                         </div>
                     </div>
                 </div>
-            </div>
+    
+                <div class="cont3">
+                    <div class="left-cont lower-left-cont">
+                        <div class="pokeball-container">
+                            <img class="pokeball fire-pokeball" src="./assets/others/pokeball.png" alt="" width ="150px" height="150px">
+                            <p class="fire type">Fire</p>
+                        </div>
+                        
+                        <div class="pokeball-container">
+                            <img class="pokeball water-pokeball" src="./assets/others/pokeball.png" alt="" width ="150px" height="150px">
+                            <p class="water type">Water</p>
+                        </div>
 
+                        <div class="pokeball-container">
+                            <img class="pokeball grass-pokeball" src="./assets/others/pokeball.png" alt="" width ="150px" height="150px">
+                            <p class="grass type">Grass</p>
+                        </div>
+                    </div>
+                    <div class="right-cont lower-right-cont">
+                        <div class="ScoreBoard-cont">
+                            <div class="sb-row1">Score Board</div>
+                            <div class="sb-row2">
+                                <div class="left-cont sb-sign">Player</div>
+                                <div class="right-cont sb-sign">CPU</div>
+                            </div>
+                            <div class="sb-row3">
+                                <div class="score player-score">0</div>
+                                <div class="divider">:</div>
+                                <div class="score cpu-score">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </main>
         <footer>
-            Copyright @ CJ-CEPE
+            copyright © 2023 cj-cepe
         </footer>
 
-        <section class="modal">
+        <section class="modal hidden">
             <div class="modal-top">
-                <div class="modal-left">
-                    <p>Player Wins</p>
-                    <img src="./assets/trainer-placeholder.png" height="100" width="auto">
+                <div class="modal-left ">
+                    <p class="modal-text">Player </p> 
+                    <p>Wins!</p>
                 </div>
-                <div class="modal-right"></div>
+                <div class="modal-right">
+                    <img class="modal-trainer" src="" height="100" width="auto">
+                </div>  
             </div>
 
             <div class="modal-bottom">
-                <button>Reset</button>
+                <button class="reset-button">Reset</button>
             </div>
             
         </section>
-        <div class="overlay hidden"></div>
+        <div class="overlay"></div>
+
+        <div class="intro-modal">
+            <p>You have been challenged by an ugly trainer!</p>
+            <button class="play-button">battle</button>
+        </div>
+
     </body>
 </html>
