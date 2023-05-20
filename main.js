@@ -1,4 +1,3 @@
-
 const elements = {
     roundElem:  document.querySelector('.round-number'),
     roundResultElem: document.querySelector('.round-result'),
@@ -64,7 +63,6 @@ elements.resetButtonElem.addEventListener('click', () => {
 
 elements.playButtonElem.addEventListener('click', function () {
     playAudio(1)
-    setTrainer()
     elements.introModalElem.classList.add('hidden')
     elements.overlayElem.classList.add('hidden')
     elements.overlayElem.style.background = 'background: rgba(0, 0, 0, 0.5)'
@@ -78,7 +76,7 @@ function resetPokemonColor(){
     elements.pokemonRightElem.style.filter = 'grayscale(0)'
 }
 
-
+setTrainer()
 
 function playAudio(whatAudio){
     switch (whatAudio) {
@@ -115,7 +113,7 @@ function setTrainer(){
     let randomNumber = getRandomNumber(13)
     elements.trainerLeftElem.src = './assets/trainers/hero/t' + randomNumber + '.png'
 
-    randomNumber = getRandomNumber(20)
+    randomNumber = getRandomNumber(18)
     elements.trainerRightElem.src = './assets/trainers/villain/t' + randomNumber + 'v.png'
 }
 
@@ -173,13 +171,6 @@ function setPokemon(playerType, cpuType){
     //pokemon
     let randomNumber = getRandomNumber(20)
     console.log(`random pokemon number ${randomNumber}`)
-
-    if(randomNumber<11){
-        elements.pokemonLeftElem.style.height = "50%";
-    } else {
-        elements.pokemonLeftElem.style.height = "40%";
-    }
-
     if(playerType == 0) {
         elements.pokemonLeftElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
@@ -193,12 +184,6 @@ function setPokemon(playerType, cpuType){
 
 
     randomNumber = getRandomNumber(20)
-    if(randomNumber<11){
-        elements.pokemonRightElem.style.height = "50%";
-    } else {
-        elements.pokemonRightElem.style.height = "40%";
-    }
-
     if(cpuType == 0) {
         elements.pokemonRightElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
