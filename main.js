@@ -276,14 +276,11 @@ function displayWinner(winner){
     elements.overlayElem.classList.remove('hidden')
 }
 
-
 function updateScoreDisplay() {
     elements.cpuScoreElem.textContent = `${cpuScore}`
     elements.playerScoreElem.textContent = `${playerScore}`
     elements.roundElem.textContent = `Round ${round}`
 }
-
-
 
 function reset(){
     playAudio(1);
