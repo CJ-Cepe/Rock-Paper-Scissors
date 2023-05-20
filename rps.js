@@ -47,7 +47,7 @@ let playerScore = 0;
 let cpuScore = 0;
 
 let githubAddress = 'https://github.com/CJ-Cepe/Rock-Paper-Scissors/raw/main/assets/audio/'
-githubAddress = '../assets/audio/'
+githubAddress = './assets/audio/'
 let githubAddressEnd = '' //?raw=true
 
 elements.pokeballOne.addEventListener('click', () => {
