@@ -64,7 +64,7 @@ elements.resetButtonElem.addEventListener('click', () => {
 
 elements.playButtonElem.addEventListener('click', function () {
     playAudio(1)
-   
+    setTrainer()
     elements.introModalElem.classList.add('hidden')
     elements.overlayElem.classList.add('hidden')
     elements.overlayElem.style.background = 'background: rgba(0, 0, 0, 0.5)'
@@ -72,11 +72,13 @@ elements.playButtonElem.addEventListener('click', function () {
 })
 
 function resetPokemonColor(){
+    elements.pokemonLeftElem.classList.remove('blink')
     elements.pokemonLeftElem.style.filter = 'grayscale(0)'
+    elements.pokemonRightElem.classList.remove('blink')
     elements.pokemonRightElem.style.filter = 'grayscale(0)'
 }
 
-playGame()
+
 
 function playAudio(whatAudio){
     switch (whatAudio) {
@@ -105,11 +107,6 @@ function playAudio(whatAudio){
             elements.audioElem.src = ''
             break;
     }
-}
-
-function playGame(){
-    setTrainer()
-    
 }
 
 
@@ -224,9 +221,10 @@ function updateResult(roundResult){
             playerScore++;
             elements.cont1Elem.style.backgroundColor = '#44bd32';
             elements.roundResultElem.textContent = `Player wins this round`;
+           
+            playAudio(4)
             elements.pokemonRightElem.style.filter = 'grayscale(100%)'
             elements.pokemonRightElem.classList.add('blink')
-            playAudio(4)
             setTimeout(() => {
                 elements.pokemonRightElem.classList.remove('blink')
             }, 500);
@@ -235,9 +233,10 @@ function updateResult(roundResult){
             cpuScore++;
             elements.cont1Elem.style.backgroundColor = '#c23616';
             elements.roundResultElem.textContent = `CPU wins this round`;
+            
+            playAudio(4)
             elements.pokemonLeftElem.style.filter = 'grayscale(100%)'
             elements.pokemonLeftElem.classList.add('blink')
-            playAudio(4)
             setTimeout(() => {
                 elements.pokemonLeftElem.classList.remove('blink')
             }, 500);
@@ -301,6 +300,7 @@ function updateScoreDisplay() {
 
 function reset(){
     playAudio(1);
+    setTrainer()
     resetPokemonColor()
     
     round = 0;
@@ -316,6 +316,5 @@ function reset(){
     elements.pokemonLeftElem.src = ''
     elements.pokemonRightElem.src = ''
     elements.roundResultElem.textContent = ``
-    playGame();
 }
 
