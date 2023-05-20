@@ -262,8 +262,7 @@ footer {
 }
 
 .intro-modal h1 ~ p {
-    color: black;
-
+    font-weight: bold;
 }
 
 .intro-modal ol {
