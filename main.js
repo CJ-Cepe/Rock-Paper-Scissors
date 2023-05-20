@@ -173,6 +173,13 @@ function setPokemon(playerType, cpuType){
     //pokemon
     let randomNumber = getRandomNumber(20)
     console.log(`random pokemon number ${randomNumber}`)
+
+    if(randomNumber<11){
+        elements.pokemonLeftElem.style.height = "50%";
+    } else {
+        elements.pokemonLeftElem.style.height = "40%";
+    }
+
     if(playerType == 0) {
         elements.pokemonLeftElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
@@ -184,13 +191,14 @@ function setPokemon(playerType, cpuType){
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 
-    if(randomNumber<11){
-        elements.pokemonLeftElem.style.height = "50%";
-    } else {
-        elements.pokemonLeftElem.style.height = "40%";
-    }
 
     randomNumber = getRandomNumber(20)
+    if(randomNumber<11){
+        elements.pokemonRightElem.style.height = "50%";
+    } else {
+        elements.pokemonRightElem.style.height = "40%";
+    }
+
     if(cpuType == 0) {
         elements.pokemonRightElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
@@ -200,12 +208,6 @@ function setPokemon(playerType, cpuType){
     } else {
         elements.pokemonRightElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
-    }
-
-    if(randomNumber<11){
-        elements.pokemonRightElem.style.height = "50%";
-    } else {
-        elements.pokemonRightElem.style.height = "40%";
     }
 }
 
