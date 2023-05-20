@@ -34,11 +34,20 @@ const elements = {
     playButtonElem: document.querySelector('.play-button'),
 }
 
+const audio = {
+    battle: new Audio('../assets/audio/battle.mp3'),
+    loss: new Audio('../assets/audio/loss.mp3'),
+    victory: new Audio('../assets/audio/victory.mp3'),
+    damage: new Audio('../assets/audio/damage.mp3'),
+    absorb: new Audio('../assets/audio/absorb.mp3'),
+}
+
 let round = 0;
 let playerScore = 0;
 let cpuScore = 0;
 
 let githubAddress = 'https://github.com/CJ-Cepe/Rock-Paper-Scissors/raw/main/assets/audio/'
+githubAddress = '../assets/audio/'
 let githubAddressEnd = '' //?raw=true
 
 elements.pokeballOne.addEventListener('click', () => {
@@ -67,6 +76,7 @@ elements.resetButtonElem.addEventListener('click', () => {
 
 elements.playButtonElem.addEventListener('click', function () {
     playAudio(1)
+    //audio.battle.play()
     elements.introModalElem.classList.add('hidden')
     elements.overlayElem.classList.add('hidden')
     elements.overlayElem.style.background = 'background: rgba(0, 0, 0, 0.5)'
@@ -117,11 +127,11 @@ function playGame(){
 
 //set trainer per game reset
 function setTrainer(){
-    let randomNumber = getRandomNumber(3)
-    elements.trainerLeftElem.src = './assets/trainers/t' + randomNumber + '.png'
+    let randomNumber = getRandomNumber(13)
+    elements.trainerLeftElem.src = './assets/trainers/hero/t' + randomNumber + '.png'
 
-    randomNumber = getRandomNumber(3)
-    elements.trainerRightElem.src = './assets/trainers/t' + randomNumber + '.png'
+    randomNumber = getRandomNumber(20)
+    elements.trainerRightElem.src = './assets/trainers/villain/t' + randomNumber + 'v.png'
 }
 
 function getRandomNumber(num=3){
@@ -176,7 +186,7 @@ function getComputerChoice(){
 
 function setPokemon(playerType, cpuType){
     //pokemon
-    let randomNumber = getRandomNumber(3)
+    let randomNumber = getRandomNumber(20)
     console.log(`random pokemon number ${randomNumber}`)
     if(playerType == 0) {
         elements.pokemonLeftElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
@@ -189,7 +199,13 @@ function setPokemon(playerType, cpuType){
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 
-    randomNumber = getRandomNumber(3)
+    if(randomNumber<11){
+        elements.pokemonLeftElem.style.height = "50%";
+    } else {
+        elements.pokemonLeftElem.style.height = "40%";
+    }
+
+    randomNumber = getRandomNumber(20)
     if(cpuType == 0) {
         elements.pokemonRightElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
@@ -200,26 +216,34 @@ function setPokemon(playerType, cpuType){
         elements.pokemonRightElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
+
+    if(randomNumber<11){
+        elements.pokemonRightElem.style.height = "50%";
+    } else {
+        elements.pokemonRightElem.style.height = "40%";
+    }
 }
 
 
 function updateResult(roundResult){
     switch(roundResult){
         case 0:
-            elements.cont1Elem.style.backgroundColor = '#589E7D';
+            elements.cont1Elem.style.backgroundColor = '#273c75';
             //elements.leftElem.style.backgroundColor = 'transparent';
             //elements.rightElem.style.backgroundColor = 'transparent';
             elements.roundResultElem.textContent = `It's a Tie`;
+            //audio.absorb.play()
             playAudio(5)
             break;
         case 1:
             playerScore++;
-            elements.cont1Elem.style.backgroundColor = '#065A9C';
+            elements.cont1Elem.style.backgroundColor = '#44bd32';
             //elements.leftElem.style.backgroundColor = 'green';
             //elements.rightElem.style.backgroundColor = 'transparent';
             elements.roundResultElem.textContent = `Player wins this round`;
             elements.pokemonRightElem.style.filter = 'grayscale(100%)'
             elements.pokemonRightElem.classList.add('blink')
+            //audio.damage.play()
             playAudio(4)
             setTimeout(() => {
                 elements.pokemonRightElem.classList.remove('blink')
@@ -227,12 +251,13 @@ function updateResult(roundResult){
             break;
         case 2: 
             cpuScore++;
-            elements.cont1Elem.style.backgroundColor = '#EB1458';
+            elements.cont1Elem.style.backgroundColor = '#c23616';
             //elements.rightElem.style.backgroundColor = 'green';
             //elements.leftElem.style.backgroundColor = 'transparent';
             elements.roundResultElem.textContent = `CPU wins this round`;
             elements.pokemonLeftElem.style.filter = 'grayscale(100%)'
             elements.pokemonLeftElem.classList.add('blink')
+            //audio.damage.play()
             playAudio(4)
             setTimeout(() => {
                 elements.pokemonLeftElem.classList.remove('blink')
@@ -269,18 +294,17 @@ function declareWinner(status) {
 }
 
 function displayWinner(winner){
-
     
     if(winner){
         playAudio(2);
         //elements.modalElem.style.color = 'green'
-        elements.modalLeftElem.style.color = `#065A9C`
+        elements.modalLeftElem.style.color = `#44bd32`
         elements.modalTextElem.textContent = `Player`
-        elements.modalTrainerElem.src = elements.trainerLeftElem.src;
+        elements.modalTrainerElem.src = elements.trainerLeftElem.src
     } else {
         playAudio(3);
         //elements.modalElem.style.backgroundColor = 'red';
-        elements.modalLeftElem.style.color = `#EB1458`
+        elements.modalLeftElem.style.color = `#e84118`
         elements.modalTextElem.textContent = `CPU`
         elements.modalTrainerElem.src = elements.trainerRightElem.src;
     }

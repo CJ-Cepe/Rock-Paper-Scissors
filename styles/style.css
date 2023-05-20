@@ -96,6 +96,9 @@ footer {
 
 .side-cont {
     flex-grow: 1;
+    flex-direction: column;
+    font-size: 3rem;
+    gap: 1rem;
 }
 
 .mid-cont {
@@ -103,11 +106,16 @@ footer {
 }
 
 .trainer {
-    height: 40%;
+    height: 35%;
     width: auto;
 }
 
-.trainer.left {
+.player-sign{
+    color: #44bd32;
+}
+
+.cpu-sign{
+    color: #e84118;
 }
 
 .pokemon {
