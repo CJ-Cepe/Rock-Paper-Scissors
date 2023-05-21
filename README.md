@@ -1,5 +1,4 @@
-# Pokemon Rock-Paper-Scissor
-## Pokemon RPS
+# Pokemon Rock-Paper-Scissor (RPS)
 
 A pokemon inspired rock-paper-scissor game
 
