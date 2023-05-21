@@ -51,6 +51,7 @@ footer {
     gap: 20%;
     color: white;
     font-size: 1.5rem;
+    background-color: transparent;
 }
 
 .cont1 .round-result{
@@ -63,9 +64,9 @@ footer {
 .cont2{
     height: 60%;
     display: flex;
-    /*background-image: url(../assets/others/arena.webp);
-    background-size: cover;
-    background-position: 40% 82%;*/
+  /*   background-image: url(../assets/others/arena.png);
+    background-size: cover; */
+    
 }
 
 /* -- body container 3 --*/

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
         <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
-        <title>R-P-S</title>
+        <title>Pokemon R-P-S</title>
+
         <link href="./assets/favicon.png" type="image/x-icon" rel="icon"/>
         <link href="styles/style.css" type="text/css" rel="stylesheet"/>
         <link href="styles/pokeball-roll.css" type="text/css" rel="stylesheet"/>
-        <script src="main.js" type="text/javascript" defer></script>
+
+        <script src="./js/main.js" type="text/javascript" defer></script>
     </head>
     <body>
         <header>
@@ -18,7 +20,7 @@
         <main>
             <audio class='audio1' type='audio/mp3'></audio>
             <audio class='audio2' type='audio/mp3'></audio>
-
+          
                 <div class="cont1">
                     <p class="round-number"></p>
                     <p class="round-result"></p>
@@ -28,7 +30,7 @@
                     <div class="left-cont">
                         <div class="side-cont">
                             <p class="player-sign">Player</p>
-                            <img src="./assets/trainer-placeholder.png" class="trainer left left-trainer" width="200px" height="auto">
+                            <img src="" class="trainer left left-trainer" width="200px" height="auto" alt="player trainer">
                         </div>
                         <div class="mid-cont">
                             <img class="pokemon left left-pokemon" width="400px" height="auto" type="image/gif" fetchpriority="high">
@@ -40,26 +42,26 @@
                             <img class="pokemon right-pokemon" width="400px" height="auto"  type="image/gif" fetchpriority="high">
                         </div>
                         <div class="side-cont">
-                            <p class="cpu-sign">Evil CPU</p>
-                            <img src="./assets/trainer-placeholder.png" class="trainer right-trainer" width="200px" height="auto">
+                            <p class="cpu-sign">Evil Trainer</p>
+                            <img src="" class="trainer right-trainer" width="200px" height="auto" alt="enemy trainer">
                         </div>
                     </div>
                 </div>
-    
+            
                 <div class="cont3">
                     <div class="left-cont lower-left-cont">
                         <div class="pokeball-container">
-                            <img class="pokeball fire-pokeball" src="./assets/others/pokeball.png" alt="" width ="150px" height="150px">
+                            <img class="pokeball fire-pokeball" src="./assets/others/pokeball.png" alt="pokeball for fire pokemon" width ="150px" height="150px">
                             <p class="fire type">Fire</p>
                         </div>
                         
                         <div class="pokeball-container">
-                            <img class="pokeball water-pokeball" src="./assets/others/pokeball.png" alt="" width ="150px" height="150px">
+                            <img class="pokeball water-pokeball" src="./assets/others/pokeball.png" alt="pokeballl for water pokemon" width ="150px" height="150px">
                             <p class="water type">Water</p>
                         </div>
 
                         <div class="pokeball-container">
-                            <img class="pokeball grass-pokeball" src="./assets/others/pokeball.png" alt="" width ="150px" height="150px">
+                            <img class="pokeball grass-pokeball" src="./assets/others/pokeball.png" alt="pokeball for grass pokemon" width ="150px" height="150px">
                             <p class="grass type">Grass</p>
                         </div>
                     </div>
@@ -90,15 +92,15 @@
                     <p>Wins!</p>
                 </div>
                 <div class="modal-right">
-                    <img class="modal-trainer" src="" height="100" width="auto">
+                    <img class="modal-trainer" src="" height="100" width="auto" alt="Winner trainer">
                 </div>  
             </div>
 
             <div class="modal-bottom">
                 <button class="reset-button">Again?</button>
             </div>
-            
         </section>
+
         <div class="overlay"></div>
 
         <div class="intro-modal">

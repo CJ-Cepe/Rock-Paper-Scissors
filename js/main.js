@@ -128,23 +128,21 @@ function playRound (playerChoice){
     let cpuChoice = getComputerChoice()
 
     setPokemon(playerChoice, cpuChoice)
-    
-    console.log(`Player Choice ${playerChoice} vs CPU Choice ${cpuChoice}`)
 
     if(playerChoice === cpuChoice){
-        console.log("It's a tie");
+        //console.log("It's a tie");
         return 0; 
     } else if (playerChoice === 2 && cpuChoice === 0) {
-        console.log("Computer wins") 
+        //console.log("Computer wins") 
         return 2;
     } else if (playerChoice === 0 && cpuChoice === 2) {
-        console.log("Player wins")
+        //console.log("Player wins")
         return 1;  
     } else if (playerChoice < cpuChoice) {
-        console.log("Computer wins")
+        //console.log("Computer wins")
         return 2;
     } else {
-        console.log("Player wins")
+        //console.log("Player wins")
         return 1;
     }
 }
@@ -169,13 +167,13 @@ function getComputerChoice(){
 
 function loadingImages(){
     let i = 1
-    for(; i<21; i++){
+    for(; i<16; i++){
         preloadingImages('./assets/pokemon/fire/p' + i + 'f.gif')
         preloadingImages('./assets/pokemon/water/p' + i + 'w.gif')
         preloadingImages('./assets/pokemon/grass/p' + i + 'g.gif')
-        console.log(i)
+        //console.log(i)
     }
-    console.log(`done loading ${i}`)
+    //console.log(`done loading ${i}`)
 }
 
 function preloadingImages(url){
@@ -185,30 +183,23 @@ function preloadingImages(url){
 
 function setPokemon(playerType, cpuType){
     //pokemon
-    let randomNumber = getRandomNumber(20)
-    console.log(`random pokemon number ${randomNumber}`)
+    let randomNumber = getRandomNumber(15)
     if(playerType == 0) {
         elements.pokemonLeftElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
-        console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
     } else if(playerType == 1) {
         elements.pokemonLeftElem.src = './assets/pokemon/water/p' + randomNumber + 'w.gif'
-        console.log('./assets/pokemon/water/p' + randomNumber + 'w.gif')
     } else {
         elements.pokemonLeftElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
-        console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 
 
-    randomNumber = getRandomNumber(20)
+    randomNumber = getRandomNumber(15)
     if(cpuType == 0) {
         elements.pokemonRightElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
-        console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
     } else if(cpuType == 1) {
         elements.pokemonRightElem.src = './assets/pokemon/water/p' + randomNumber + 'w.gif'
-        console.log('./assets/pokemon/water/p' + randomNumber + 'w.gif')
     } else {
         elements.pokemonRightElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
-        console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 }
 
@@ -246,14 +237,11 @@ function updateResult(roundResult){
             break
     }
     round++;
-    console.log(roundResult)
-    console.log(`${round} ${playerScore} ${cpuScore} `)
 
     //check if there is a winner
     checkWinner()
     //reset
     updateScoreDisplay()
-
 }
 
 function checkWinner() {
@@ -264,12 +252,12 @@ function checkWinner() {
 }
 
 function declareWinner(status) {
-    console.log('===FINAL RESULTs===')
+    //console.log('===FINAL RESULTs===')
     if(status){
-        console.log('Player Wins')
+        //console.log('Player Wins')
         displayWinner(true)
     } else {
-        console.log('Computer Wins')
+        //console.log('Computer Wins')
         displayWinner(false)
     }
 }
@@ -284,7 +272,7 @@ function displayWinner(winner){
     } else {
         playAudio(3);
         elements.modalLeftElem.style.color = `#e84118`
-        elements.modalTextElem.textContent = `CPU`
+        elements.modalTextElem.textContent = `Evil Trainer`
         elements.modalTrainerElem.src = elements.trainerRightElem.src;
     }
 
