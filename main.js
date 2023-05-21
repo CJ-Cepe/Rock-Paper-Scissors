@@ -172,26 +172,26 @@ function setPokemon(playerType, cpuType){
     let randomNumber = getRandomNumber(20)
     console.log(`random pokemon number ${randomNumber}`)
     if(playerType == 0) {
-        elements.pokemonLeftElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
+        elements.pokemonLeftElem.src = 'fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
     } else if(playerType == 1) {
-        elements.pokemonLeftElem.src = './assets/pokemon/water/p' + randomNumber + 'w.gif'
+        elements.pokemonLeftElem.src = 'water/p' + randomNumber + 'w.gif'
         console.log('./assets/pokemon/water/p' + randomNumber + 'w.gif')
     } else {
-        elements.pokemonLeftElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
+        elements.pokemonLeftElem.src = 'grass/p' + randomNumber + 'g.gif'
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 
 
     randomNumber = getRandomNumber(20)
     if(cpuType == 0) {
-        elements.pokemonRightElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
+        elements.pokemonRightElem.src = 'fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
     } else if(cpuType == 1) {
-        elements.pokemonRightElem.src = './assets/pokemon/water/p' + randomNumber + 'w.gif'
+        elements.pokemonRightElem.src = 'water/p' + randomNumber + 'w.gif'
         console.log('./assets/pokemon/water/p' + randomNumber + 'w.gif')
     } else {
-        elements.pokemonRightElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
+        elements.pokemonRightElem.src = 'grass/p' + randomNumber + 'g.gif'
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 }
