@@ -1,11 +1,16 @@
-# Rock-Paper-Scissors Pokemon game
+# Pokemon Rock-Paper-Scissor
+## Pokemon RPS
 
-Rules
-  - First score 6 wins
-  - per round pick a type/element
-  - Water beats Fire
-  - Grass beats Water
-  - Fire beats Grass
+A pokemon inspired rock-paper-scissor game
+
+Game Instruction
+ 1. Choose 1 pokeball per round
+ 2. Each pokeball corresponds to a pokemon type (fire, water, grass)
+ 3. Your choosen type must beat the opponent's type in order to score
+  - water beats fire
+  - grass beats water
+  - fire beats grass
+ 4. First to score 6 wins the game 
 
 Assets
   - All assets used (sprites & audio), belongs to the Pokemon Company
