@@ -76,6 +76,7 @@ function resetPokemonColor(){
     elements.pokemonRightElem.style.filter = 'grayscale(0)'
 }
 
+loadingImages()
 setTrainer()
 
 function playAudio(whatAudio){
@@ -166,32 +167,47 @@ function getComputerChoice(){
 }
 
 
+function loadingImages(){
+    let i = 1
+    for(; i<21; i++){
+        preloadingImages('./assets/pokemon/fire/p' + i + 'f.gif')
+        preloadingImages('./assets/pokemon/water/p' + i + 'w.gif')
+        preloadingImages('./assets/pokemon/grass/p' + i + 'g.gif')
+        console.log(i)
+    }
+    console.log(`done loading ${i}`)
+}
+
+function preloadingImages(url){
+    let img = new Image()
+    img.src = url;
+}
 
 function setPokemon(playerType, cpuType){
     //pokemon
     let randomNumber = getRandomNumber(20)
     console.log(`random pokemon number ${randomNumber}`)
     if(playerType == 0) {
-        elements.pokemonLeftElem.src = 'fire/p' + randomNumber + 'f.gif'
+        elements.pokemonLeftElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
     } else if(playerType == 1) {
-        elements.pokemonLeftElem.src = 'water/p' + randomNumber + 'w.gif'
+        elements.pokemonLeftElem.src = './assets/pokemon/water/p' + randomNumber + 'w.gif'
         console.log('./assets/pokemon/water/p' + randomNumber + 'w.gif')
     } else {
-        elements.pokemonLeftElem.src = 'grass/p' + randomNumber + 'g.gif'
+        elements.pokemonLeftElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 
 
     randomNumber = getRandomNumber(20)
     if(cpuType == 0) {
-        elements.pokemonRightElem.src = 'fire/p' + randomNumber + 'f.gif'
+        elements.pokemonRightElem.src = './assets/pokemon/fire/p' + randomNumber + 'f.gif'
         console.log('./assets/pokemon/fire/p' + randomNumber + 'f.gif')
     } else if(cpuType == 1) {
-        elements.pokemonRightElem.src = 'water/p' + randomNumber + 'w.gif'
+        elements.pokemonRightElem.src = './assets/pokemon/water/p' + randomNumber + 'w.gif'
         console.log('./assets/pokemon/water/p' + randomNumber + 'w.gif')
     } else {
-        elements.pokemonRightElem.src = 'grass/p' + randomNumber + 'g.gif'
+        elements.pokemonRightElem.src = './assets/pokemon/grass/p' + randomNumber + 'g.gif'
         console.log('./assets/pokemon/grass/p' + randomNumber + 'g.gif')
     }
 }
