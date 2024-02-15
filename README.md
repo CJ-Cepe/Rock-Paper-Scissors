@@ -3,13 +3,13 @@
 A pokemon inspired rock-paper-scissor game
 
 Game Instruction
- 1. Choose 1 pokeball per round
- 2. Each pokeball corresponds to a pokemon type (fire, water, grass)
- 3. Your choosen type must beat the opponent's type in order to score
-  - water beats fire
-  - grass beats water
-  - fire beats grass
- 4. First to score 6 wins the game 
+ 1. Choose one Pokeball per round.
+ 2. Each Pokeball corresponds to an element.
+ 3. To score, the element type you choose must beat the opponent's type:
+  - Water beats Fire
+  - Grass beats Water
+  - Fire beats Grass
+ 4. The first to score 6 points wins the game.
 
 Assets
   - All assets used (sprites & audio), belongs to the Pokemon Company
